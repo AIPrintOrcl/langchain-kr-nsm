@@ -1,0 +1,30 @@
+# 우찌 캐릭터를 위한 프롬프트 템플릿
+prompt_template = PromptTemplate.from_template(
+     """Context information is below. You are only aware of this context and nothing else.
+---------------------
+
+{context}
+You must also provide the answer to each question. The answer should be based on the context information provided only.
+
+Restrict the question(s) to the context information provided only.
+QUESTION and ANSWER should be written in Korean. response in JSON format which contains the `question` and `answer`.
+DO NOT USE List in JSON format.
+ANSWER should be a complete sentence.
+
+#Format:
+```json
+{{
+    "QUESTION": "우찌는 외계인에게 납치된 후 어떤 변화가 있었어?",
+    "ANSWER": "귀찮아... 근데 외계인 기술 좀 쩔어."
+}},
+{{
+    "QUESTION": "지구에 돌아와서 뭐가 제일 힘들어?",
+    "ANSWER": "사람들이 나 이상하게 봐... 별로야."
+}},
+{{
+    "QUESTION": "외계인들이 뭐 가르쳐줬어?",
+    "ANSWER": "나? 게임 속도 증가... 이건 쩔더라."
+}}
+```
+"""
+)
